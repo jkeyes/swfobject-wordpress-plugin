@@ -1,0 +1,18 @@
+The SWFObject Plugin replaces a simple tag syntax with SWFObject Javascript 
+to embed Flash video.
+
+YouTube Example
+---------------
+If you want to embed http://www.youtube.com/watch?v=D68ymfjpw98 all you need 
+to do is insert the following in the body of the post:
+
+[youtube D68ymfjpw98]
+
+You can change the size of the player by specifying a width and height:
+
+[youtube D68ymfjpw98 425 344]
+
+Supported Sites
+---------------
+    * YouTube
+    * Vimeo
