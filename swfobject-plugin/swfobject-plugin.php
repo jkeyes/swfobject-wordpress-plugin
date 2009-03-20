@@ -35,19 +35,15 @@ define("VIDEO_CONFIG",
                                 "width" => 425,
                                 "height" => 344,
                                 "regexp" => "/\[youtube ([[:print:]]+)\]/",
-                                "code" => "<script type=\"text/javascript\">swfobject.embedSWF(\"http://www.youtube.com/v/VID_ID\", \"youtube-V
-ID_ID\", \"WIDTH\", \"HEIGHT\", \"9.0.0\",\"expressInstall.swf\", {}, {}, {});</script><div id=\"youtube-VID_ID\"></div>"
-                ),
+                                "code" => "<script type=\"text/javascript\">swfobject.embedSWF(\"http://www.youtube.com/v/VID_ID\", \"youtube-VID_ID\", \"WIDTH\", \"HEIGHT\", \"9.0.0\",\"expressInstall.swf\", {}, {}, {});</script><div id=\"youtube-VID_ID\"></div>"
+                        ),
                         "vimeo" => array(
                                 "width" => 400,
                                 "height" => 300,
                                 "regexp" => "/\[vimeo ([[:print:]]+)\]/",
-                                "code" => "<script type=\"text/javascript\">var flashvars = {};var params = {};var attributes = {};swfobject.em
-bedSWF(\"http://vimeo.com/moogaloop.swf?clip_id=VID_ID&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&a
-mp;fullscreen=1\", \"vimeo-VID_ID\", \"WIDTH\", \"HEIGHT\", \"9.0.0\",\"expressInstall.swf\", flashvars, params, attributes);</script><div id=\
-"vimeo-VID_ID\"></div>"
+                                "code" => "<script type=\"text/javascript\">var flashvars = {};var params = {};var attributes = {};swfobject.embedSWF(\"http://vimeo.com/moogaloop.swf?clip_id=VID_ID&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1\", \"vimeo-VID_ID\", \"WIDTH\", \"HEIGHT\", \"9.0.0\",\"expressInstall.swf\", flashvars, params, attributes);</script><div id=\"vimeo-VID_ID\"></div>"
                         )
-        )
+                )
         )
 );
 
