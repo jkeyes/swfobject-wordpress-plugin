@@ -16,3 +16,13 @@ Supported Sites
 ---------------
     * YouTube
     * Vimeo
+
+Credit
+------
+Inspired by http://www.daburna.de/blog/2006/12/13/wordpress-video-plugin/
+
+Change History
+--------------
+
+0.2 - 20th Match 2009 - Bundle SWFObject 2.1
+0.1 - 20th March 2009 - First version
