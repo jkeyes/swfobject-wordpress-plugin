@@ -42,6 +42,12 @@ define("VIDEO_CONFIG",
                                 "height" => 300,
                                 "regexp" => "/\[vimeo ([[:print:]]+)\]/",
                                 "code" => "<script type=\"text/javascript\">var flashvars = {};var params = {};var attributes = {};swfobject.embedSWF(\"http://vimeo.com/moogaloop.swf?clip_id=VID_ID&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1\", \"vimeo-VID_ID\", \"WIDTH\", \"HEIGHT\", \"9.0.0\",\"expressInstall.swf\", flashvars, params, attributes);</script><div id=\"vimeo-VID_ID\"></div>"
+                        ),
+                        "qik" => array (
+                        		"width" => 425,
+                        		"height" => 319,
+                                "regexp" => "/\[qik ([[:print:]]+)\]/",
+                                "code" => "<script type=\"text/javascript\">var flashvars = {'rssURL': 'http://qik.com/video/VID_ID.rss', 'autoPlay': 'false' };var params = { 'allowScriptAccess': 'sameDomain', 'allowFullScreen': 'true', 'movie': 'http://qik.com/swfs/qikPlayer4.swf', 'quality': 'high', 'bgcolor': '#333333' };var attributes = {};swfobject.embedSWF(\"http://qik.com/swfs/qikPlayer4.swf\", \"qik-VID_ID\", \"WIDTH\", \"HEIGHT\", \"9.0.0\",\"expressInstall.swf\", flashvars, params, {});</script><div id=\"qik-VID_ID\"></div>"
                         )
                 )
         )
