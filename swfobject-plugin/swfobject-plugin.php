@@ -3,7 +3,7 @@
 Plugin Name: SWFObject Plugin
 Plugin URI:  http://keyes.ie/wordpress/swfobject-plugin/
 Description: Replaces a simple tag syntax with SWFObject JavaScript to embed Flash video. 
-Version: 0.3
+Version: 0.4
 Author: John Keyes 
 Author URI: http://keyes.ie
 */
