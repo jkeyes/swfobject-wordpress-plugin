@@ -25,6 +25,8 @@ Author URI: http://keyes.ie
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+define('SWFOBJECT_PLUGIN_URL_PATH', get_option('siteurl') . '/wp-content/plugins/' . dirname(plugin_basename(__FILE__)) . '/');
+ 
 $template = <<<TEMPLATE
 <script type="text/javascript">
 var flashvars  = _FLASHVARS_;
@@ -72,6 +74,20 @@ $vimeo = get_javascript(
         'http://vimeo.com/moogaloop.swf?clip_id=VID_ID&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1'
 );
 
+$viddler = get_javascript(
+		"viddler",
+		"{}",
+		"{}",
+		'http://www.viddler.com/player/VID_ID'
+);
+
+$jwplayer = get_javascript(
+        "jwplayer",
+        "{'image': 'VID_ID.jpg', 'file': 'VID_ID.flv', 'plugins': 'viral-1d'}",
+        "{}",
+        SWFOBJECT_PLUGIN_URL_PATH . 'player-viral.swf'
+);
+
 $youtube = get_javascript(
         "youtube",
         "{}",
@@ -83,6 +99,12 @@ $youtube = get_javascript(
 define("VIDEO_CONFIG", 
         serialize(
                 array(
+                        "jwplayer" => array(
+                                "width" => 425,
+                                "height" => 344,
+                                "regexp" => "/\[jwplayer ([[:print:]]+)\]/",
+                                "code"   => $jwplayer
+                        ),
                         "youtube" => array(
                                 "width" => 425,
                                 "height" => 344,
@@ -94,6 +116,12 @@ define("VIDEO_CONFIG",
                                 "height" => 300,
                                 "regexp" => "/\[vimeo ([[:print:]]+)\]/",
                                 "code" => $vimeo
+                        ),
+                        "viddler" => array(
+                                "width" => 545,
+                                "height" => 348,
+                                "regexp" => "/\[viddler ([[:print:]]+)\]/",
+                                "code" => $viddler
                         ),
                         "qik" => array (
                         		"width" => 425,

@@ -14,8 +14,12 @@ You can change the size of the player by specifying a width and height:
 
 Supported Sites
 ---------------
-    * YouTube
+    * 12seconds
+    * JWPlayer
     * Vimeo
+    * Viddler
+    * YouTube
+    
 
 Credit
 ------
@@ -24,6 +28,9 @@ Inspired by http://www.daburna.de/blog/2006/12/13/wordpress-video-plugin/
 Change History
 --------------
 
+0.5 - 10th April 2009 - Add Viddler and JWPlayer support
+                        No longer trying to add swfobject.js dynamically
+0.4 - 27th March 2009 - Fixed version number
 0.3 - 21st March 2009 - Add Qik Support
 0.2 - 20th Match 2009 - Bundle SWFObject 2.1
 0.1 - 20th March 2009 - First version
