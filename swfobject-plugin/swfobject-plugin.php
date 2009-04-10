@@ -3,7 +3,7 @@
 Plugin Name: SWFObject Plugin
 Plugin URI:  http://keyes.ie/wordpress/swfobject-plugin/
 Description: Replaces a simple tag syntax with SWFObject JavaScript to embed Flash video. 
-Version: 0.4
+Version: 0.5
 Author: John Keyes 
 Author URI: http://keyes.ie
 */
@@ -24,22 +24,6 @@ Author URI: http://keyes.ie
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-
-define('SWFOBJECT_PLUGIN_URL_PATH', get_option('siteurl') . '/wp-content/plugins/' . dirname(plugin_basename(__FILE__)) . '/');
-
-$swfobject_script = <<<SWFOBJECT_SCRIPT
-<script type="text/javascript">
-if(typeof(swfobject) == "undefined") {
-        var head = document.getElementsByTagName("head")[0];
-    var script = document.createElement("script");
-    script.setAttribute("src", "PLUGIN_URL_PATHswfobject.js");
-    script.setAttribute("type", "text/javascript");
-    head.appendChild(script);
-}
-</script>
-SWFOBJECT_SCRIPT;
-$swfobject_script = str_replace("PLUGIN_URL_PATH", SWFOBJECT_PLUGIN_URL_PATH, $swfobject_script);
-define('SWFOBJECT_SCRIPT', $swfobject_script);
 
 $template = <<<TEMPLATE
 <script type="text/javascript">
@@ -149,13 +133,8 @@ function video_plugin($content)
 {
         $plugins = array();
         $config = unserialize(VIDEO_CONFIG);
-        $first = 0;
         foreach ($config as $key => $value) {
-                if ($first == 0) {
-                	echo(SWFOBJECT_SCRIPT); 
-                	$first = 1; 
-                }
-                $content = (preg_replace_callback($config[$key]["regexp"], 'video_plugin_callback', $content));
+            $content = (preg_replace_callback($config[$key]["regexp"], 'video_plugin_callback', $content));
         }
         return $content; 
 }
@@ -163,4 +142,5 @@ function video_plugin($content)
 add_filter('the_content', 'video_plugin',1);
 add_filter('the_content_rss', 'video_plugin',1);
 add_filter('comment_text', 'video_plugin');
+
 ?>
